@@ -104,7 +104,7 @@ void example(){
  
 
    for(int ijet=0;ijet<fjet->nref;ijet++){
-    if(fabs(fjet->jteta[ijet])>2 || fjet->jtpt[ijet]<30) continue;
+    if(fabs(fjet->jteta[ijet])>2 || fjet->jtpt[ijet]<50) continue;
     float r_reco=sqrt(pow(eta-fjet->jteta[ijet],2)+pow(acos(cos(phi-fjet->jtphi[ijet])),2));
     if(r_reco<rmin)rmin=r_reco;
    }
@@ -127,7 +127,6 @@ void example(){
    float eff=1;
    eff=eff_accept*eff_cent*eff_pt*eff_rmin;
    if(eff==0){
-    cout<<"zero efficiency"<<" eta="<<eta<<" pt="<<pt<<" phi="<<phi<<" cent="<<cent<<" rmin="<<rmin<<" eff_cent="<<eff_cent<<"eff_pt"<<eff_pt<<" eff_accept"<<eff_accept<<" eff_rmin"<<eff_rmin<<endl;
 	  if(pt>100)eff=0.8;
 	  else eff=1;
    }
@@ -155,7 +154,7 @@ void example(){
    float rmin=99;
 
    for(int ijet=0;ijet<fjet->nref;ijet++){
-    if(fabs(fjet->jteta[ijet])>2 || fjet->jtpt[ijet]<30) continue;
+    if(fabs(fjet->jteta[ijet])>2 || fjet->jtpt[ijet]<50) continue;
     float r_reco=sqrt(pow(eta-fjet->jteta[ijet],2)+pow(acos(cos(phi-fjet->jtphi[ijet])),2));
     if(r_reco<rmin)rmin=r_reco;
    }
